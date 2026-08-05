@@ -556,19 +556,6 @@
       lastScroll = currentScroll;
     }, { passive: true });
 
-    const whatsappFloat = document.querySelector('.whatsapp-float');
-    let floatVisible = true;
-    window.addEventListener('scroll', () => {
-      const footer = document.querySelector('footer');
-      const footerRect = footer.getBoundingClientRect();
-      const floatRect = whatsappFloat.getBoundingClientRect();
-      if (footerRect.top < floatRect.bottom + 20) {
-        whatsappFloat.style.transform = `translateY(-${floatRect.bottom - footerRect.top + 20}px)`;
-      } else {
-        whatsappFloat.style.transform = 'translateY(0)';
-      }
-    }, { passive: true });
-
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
